@@ -47,14 +47,15 @@ class EnvironmentValidator:
     
     # Required environment variables
     REQUIRED_VARS = [
-        'SECRET_KEY',
-        'OPENAI_API_KEY',
+        'GROQ_API_KEY',
+        'GROQ_BASE_URL',
         'ELEVENLABS_API_KEY',
         'REPLICATE_API_TOKEN',
     ]
     
     # Optional environment variables
     OPTIONAL_VARS = [
+        'OPENAI_API_KEY',
         'HUGGINGFACE_API_KEY',
         'DATABASE_URL',
         'REDIS_URL',
@@ -94,9 +95,9 @@ class EnvironmentValidator:
             result = self.validate_variable(var_name, required=True)
             self.results.append(result)
             if result.is_valid:
-                logger.info(f"[EnvValidator] ✓ {var_name} - Valid")
+                logger.info(f"[EnvValidator] [OK] {var_name} - Valid")
             else:
-                logger.error(f"[EnvValidator] ✗ {var_name} - Invalid: {result.error_message}")
+                logger.error(f"[EnvValidator] [FAIL] {var_name} - Invalid: {result.error_message}")
         
         # Validate optional variables
         for var_name in self.OPTIONAL_VARS:
@@ -104,9 +105,9 @@ class EnvironmentValidator:
             result = self.validate_variable(var_name, required=False)
             self.results.append(result)
             if result.warning_message:
-                logger.warning(f"[EnvValidator] ⚠ {var_name} - {result.warning_message}")
+                logger.warning(f"[EnvValidator] [WARN] {var_name} - {result.warning_message}")
             elif result.is_valid:
-                logger.info(f"[EnvValidator] ✓ {var_name} - Valid (optional)")
+                logger.info(f"[EnvValidator] [OK] {var_name} - Valid (optional)")
         
         # Check for placeholder values in all set variables
         self._check_placeholders()
@@ -119,9 +120,9 @@ class EnvironmentValidator:
         )
         
         if is_valid:
-            logger.info("[EnvValidator] ✓ Environment validation passed")
+            logger.info("[EnvValidator] [OK] Environment validation passed")
         else:
-            logger.error("[EnvValidator] ✗ Environment validation failed")
+            logger.error("[EnvValidator] [FAIL] Environment validation failed")
         
         return is_valid, self.results
     
@@ -155,8 +156,8 @@ class EnvironmentValidator:
                 )
         
         # Variable-specific validations
-        if var_name == 'SECRET_KEY':
-            return self._validate_secret_key(value, var_name, required)
+        if var_name == 'GROQ_API_KEY':
+            return self._validate_groq_key(value, var_name, required)
         elif var_name == 'OPENAI_API_KEY':
             return self._validate_openai_key(value, var_name, required)
         elif var_name == 'ELEVENLABS_API_KEY':
@@ -172,22 +173,22 @@ class EnvironmentValidator:
             is_required=required
         )
     
-    def _validate_secret_key(self, value: str, var_name: str, required: bool) -> ValidationResult:
-        """Validate SECRET_KEY"""
-        if len(value) < 32:
+    def _validate_groq_key(self, value: str, var_name: str, required: bool) -> ValidationResult:
+        """Validate GROQ_API_KEY"""
+        if not value.startswith('gsk_'):
             return ValidationResult(
                 variable_name=var_name,
                 is_valid=False,
                 is_required=required,
-                error_message=f"SECRET_KEY must be at least 32 characters long (current: {len(value)})"
+                error_message="GROQ_API_KEY must start with 'gsk_'"
             )
         
-        if any(pattern in value.lower() for pattern in self.PLACEHOLDER_PATTERNS):
+        if len(value) < 20:
             return ValidationResult(
                 variable_name=var_name,
                 is_valid=False,
                 is_required=required,
-                error_message="SECRET_KEY appears to be a placeholder value. Generate a secure key with: python -c \"import secrets; print(secrets.token_hex(32))\""
+                error_message=f"GROQ_API_KEY appears to be too short (current: {len(value)})"
             )
         
         return ValidationResult(
@@ -287,18 +288,18 @@ class EnvironmentValidator:
         optional_warnings = [r for r in self.results if not r.is_required and r.warning_message]
         
         if required_errors:
-            print("\n❌ REQUIRED VARIABLES MISSING OR INVALID:")
+            print("\n[FAIL] REQUIRED VARIABLES MISSING OR INVALID:")
             for result in required_errors:
                 print(f"   - {result.variable_name}: {result.error_message}")
         
         if optional_warnings:
-            print("\n⚠️  OPTIONAL VARIABLES NOT SET:")
+            print("\n[WARN] OPTIONAL VARIABLES NOT SET:")
             for result in optional_warnings:
                 print(f"   - {result.variable_name}: {result.warning_message}")
         
         valid_required = [r for r in self.results if r.is_required and r.is_valid]
         if valid_required:
-            print("\n✅ REQUIRED VARIABLES CONFIGURED:")
+            print("\n[OK] REQUIRED VARIABLES CONFIGURED:")
             for result in valid_required:
                 masked_value = self._mask_sensitive_value(result.variable_name)
                 print(f"   - {result.variable_name}: {masked_value}")

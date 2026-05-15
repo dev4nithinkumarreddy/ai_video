@@ -23,6 +23,8 @@ class AudioService:
         self.api_token = self.settings.ELEVENLABS_API_KEY
         self.storage_service = get_storage_service()
         self.client = AsyncElevenLabs(api_key=self.api_token)
+        self.audio_dir = Path("generated/audio")
+        self.audio_dir.mkdir(parents=True, exist_ok=True)
         self._validate_configuration()
     
     def _validate_configuration(self):

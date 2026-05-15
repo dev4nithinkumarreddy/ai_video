@@ -3,9 +3,8 @@ from typing import Optional, List, Dict, Any
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select, update, delete, and_, or_, func
 from sqlalchemy.orm import selectinload
-from datetime import datetime
 
-from models.database import User, Project, Scene, GeneratedAsset
+from models.database import Project, Scene, GeneratedAsset
 from database.database import get_async_session, get_db
 
 logger = logging.getLogger(__name__)
@@ -13,72 +12,6 @@ logger = logging.getLogger(__name__)
 
 class DatabaseService:
     """Database service for CRUD operations"""
-    
-    async def create_user(
-        self,
-        email: str,
-        username: str,
-        password_hash: str,
-        first_name: Optional[str] = None,
-        last_name: Optional[str] = None
-    ) -> User:
-        """Create a new user"""
-        async for session in get_db():
-            user = User(
-                email=email,
-                username=username,
-                password_hash=password_hash,
-                first_name=first_name,
-                last_name=last_name
-            )
-            session.add(user)
-            await session.commit()
-            await session.refresh(user)
-            return user
-    
-    async def get_user_by_id(self, user_id: int) -> Optional[User]:
-        """Get user by ID"""
-        async for session in get_db():
-            result = await session.execute(
-                select(User).where(User.id == user_id)
-            )
-            return result.scalar_one_or_none()
-            break
-    
-    async def get_user_by_email(self, email: str) -> Optional[User]:
-        """Get user by email"""
-        async with get_async_session() as session:
-            result = await session.execute(
-                select(User).where(User.email == email)
-            )
-            return result.scalar_one_or_none()
-    
-    async def get_user_by_username(self, username: str) -> Optional[User]:
-        """Get user by username"""
-        async with get_async_session() as session:
-            result = await session.execute(
-                select(User).where(User.username == username)
-            )
-            return result.scalar_one_or_none()
-    
-    async def update_user_last_login(self, user_id: int) -> bool:
-        """Update user's last login time"""
-        async for session in get_db():
-            result = await session.execute(
-                update(User)
-                .where(User.id == user_id)
-                .values(last_login=datetime.utcnow())
-            )
-            await session.commit()
-            return result.rowcount > 0
-            break
-            result = await session.execute(
-                update(User)
-                .where(User.id == user_id)
-                .values(last_login=datetime.utcnow())
-            )
-            await session.commit()
-            return result.rowcount > 0
     
     async def create_project(
         self,
@@ -90,18 +23,6 @@ class DatabaseService:
     ) -> Project:
         """Create a new project"""
         async for session in get_db():
-            project = Project(
-                user_id=user_id,
-                title=title,
-                description=description,
-                topic=topic,
-                settings=settings or {}
-            )
-            session.add(project)
-            await session.commit()
-            await session.refresh(project)
-            return project
-            break
             project = Project(
                 user_id=user_id,
                 title=title,
@@ -244,7 +165,8 @@ class DatabaseService:
         scene_id: Optional[int] = None,
         file_url: Optional[str] = None,
         file_size: Optional[int] = None,
-        metadata: Optional[Dict[str, Any]] = None
+        metadata: Optional[Dict[str, Any]] = None,
+        status: str = "processing"
     ) -> GeneratedAsset:
         """Create a new generated asset"""
         async with get_async_session() as session:
@@ -255,7 +177,8 @@ class DatabaseService:
                 file_path=file_path,
                 file_url=file_url,
                 file_size=file_size,
-                metadata=metadata or {}
+                asset_metadata=metadata or {},
+                status=status
             )
             session.add(asset)
             await session.commit()

@@ -13,8 +13,8 @@ def setup_logging() -> None:
     """Setup logging configuration"""
     settings = get_settings()
     
-    # Create console
-    console = Console()
+    # Create console with Windows-safe settings
+    console = Console(force_terminal=True, force_jupyter=False)
     
     # Setup root logger
     root_logger = logging.getLogger()
@@ -28,8 +28,9 @@ def setup_logging() -> None:
         console=console,
         show_time=True,
         show_path=True,
-        markup=True,
-        rich_tracebacks=True
+        markup=False,
+        rich_tracebacks=True,
+        enable_link_path=False
     )
     console_handler.setLevel(getattr(logging, settings.LOG_LEVEL.upper()))
     

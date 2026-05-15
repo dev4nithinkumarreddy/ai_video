@@ -17,7 +17,7 @@ from utils.static_files import setup_static_files
 from database.database import init_database, close_database
 
 # Import routes
-from routes import health, auth, storage, script_generation, audio, images, video_rendering, websocket
+from routes import health, storage, script_generation, audio, images, video_rendering, websocket
 
 # Setup production logging
 production_logger = setup_production_logging()
@@ -180,7 +180,6 @@ async def general_exception_handler(request: Request, exc: Exception):
 
 # Include routers
 app.include_router(health.router, prefix="/api", tags=["health"])
-app.include_router(auth.router, prefix="/api/auth", tags=["authentication"])
 app.include_router(storage.router, prefix="/api/storage", tags=["storage"])
 app.include_router(script_generation.router, prefix="/api", tags=["script-generation"])
 app.include_router(audio.router, prefix="/api/audio", tags=["audio"])

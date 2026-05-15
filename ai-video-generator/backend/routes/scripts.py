@@ -76,6 +76,22 @@ async def get_saved_scripts(
         raise HTTPException(status_code=500, detail="Failed to get saved scripts")
 
 
+@router.get("/templates", response_model=List[ScriptTemplate])
+async def get_script_templates(
+    category: Optional[str] = Query(None, description="Filter by category")
+):
+    """
+    Get available script templates
+    """
+    try:
+        script_service = ScriptService()
+        templates = await script_service.get_script_templates(category=category)
+        return templates
+    except Exception as e:
+        logger.error(f"Failed to get script templates: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to get script templates")
+
+
 @router.get("/{script_id}", response_model=ScriptResponse)
 async def get_script(script_id: str):
     """
@@ -129,21 +145,6 @@ async def delete_script(script_id: str):
         logger.error(f"Failed to delete script {script_id}: {str(e)}")
         raise HTTPException(status_code=500, detail="Failed to delete script")
 
-
-@router.get("/templates", response_model=List[ScriptTemplate])
-async def get_script_templates(
-    category: Optional[str] = Query(None, description="Filter by category")
-):
-    """
-    Get available script templates
-    """
-    try:
-        script_service = ScriptService()
-        templates = await script_service.get_script_templates(category=category)
-        return templates
-    except Exception as e:
-        logger.error(f"Failed to get script templates: {str(e)}")
-        raise HTTPException(status_code=500, detail="Failed to get script templates")
 
 
 @router.post("/templates/{template_id}/generate")

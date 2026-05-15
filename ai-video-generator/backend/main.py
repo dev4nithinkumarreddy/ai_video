@@ -13,7 +13,7 @@ from utils.logging_config import setup_logging
 from utils.config import get_settings
 from utils.env_validator import validate_environment
 from utils.logging_middleware import setup_api_logging_middleware
-from routes import health, videos, scripts, templates, script_generation, audio, images, video_rendering, websocket, auth, storage
+from routes import health, storage, videos, scripts, templates, script_generation, audio, images, video_rendering, websocket
 from database.database import init_database, close_database
 
 
@@ -108,7 +108,7 @@ setup_api_logging_middleware(app, debug_mode=settings.DEBUG)
 
 # Include routers
 app.include_router(health.router, prefix="/api", tags=["health"])
-app.include_router(auth.router, prefix="/api/auth", tags=["authentication"])
+
 app.include_router(storage.router, prefix="/api/storage", tags=["storage"])
 app.include_router(videos.router, prefix="/api/videos", tags=["videos"])
 app.include_router(scripts.router, prefix="/api/scripts", tags=["scripts"])
@@ -140,5 +140,6 @@ if __name__ == "__main__":
         host=settings.HOST,
         port=settings.PORT,
         reload=settings.DEBUG,
+        reload_excludes=["*.db", "*.sqlite", "*.log", "logs/*", "__pycache__/*"],
         log_level="info"
     )

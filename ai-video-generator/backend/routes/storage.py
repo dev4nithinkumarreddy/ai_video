@@ -1,15 +1,11 @@
 import logging
-from fastapi import APIRouter, HTTPException, status, UploadFile, File, Form, Depends
+from fastapi import APIRouter, HTTPException, status, UploadFile, File, Form
 from fastapi.responses import FileResponse
-from sqlalchemy.ext.asyncio import AsyncSession
 from typing import Optional, List, Dict, Any
 import os
 import mimetypes
 
 from services.storage_service import get_storage_service
-from database.database import get_async_session
-from routes.auth import get_current_active_user
-from models.database import User
 
 router = APIRouter()
 logger = logging.getLogger(__name__)
@@ -18,8 +14,7 @@ logger = logging.getLogger(__name__)
 @router.post("/upload/video")
 async def upload_video(
     file: UploadFile = File(...),
-    project_id: str = Form(...),
-    current_user: User = Depends(get_current_active_user)
+    project_id: str = Form(...)
 ):
     """Upload a video file"""
     try:
@@ -60,8 +55,7 @@ async def upload_video(
 async def upload_image(
     file: UploadFile = File(...),
     project_id: str = Form(...),
-    scene_id: str = Form(...),
-    current_user: User = Depends(get_current_active_user)
+    scene_id: str = Form(...)
 ):
     """Upload an image file"""
     try:
@@ -102,8 +96,7 @@ async def upload_image(
 async def upload_audio(
     file: UploadFile = File(...),
     project_id: str = Form(...),
-    scene_id: str = Form(...),
-    current_user: User = Depends(get_current_active_user)
+    scene_id: str = Form(...)
 ):
     """Upload an audio file"""
     try:
@@ -183,8 +176,7 @@ async def get_file(file_path: str):
 
 @router.delete("/file/{file_path:path}")
 async def delete_file(
-    file_path: str,
-    current_user: User = Depends(get_current_active_user)
+    file_path: str
 ):
     """Delete a file"""
     try:
@@ -245,8 +237,7 @@ async def get_file_info(file_path: str):
 
 @router.get("/project/{project_id}/files")
 async def get_project_files(
-    project_id: str,
-    current_user: User = Depends(get_current_active_user)
+    project_id: str
 ):
     """Get all files for a project"""
     try:
@@ -273,8 +264,7 @@ async def get_project_files(
 
 @router.post("/cleanup")
 async def cleanup_old_files(
-    max_age_days: int = 30,
-    current_user: User = Depends(get_current_active_user)
+    max_age_days: int = 30
 ):
     """Clean up old files"""
     try:
@@ -299,7 +289,7 @@ async def cleanup_old_files(
 
 
 @router.get("/stats")
-async def get_storage_stats(current_user: User = Depends(get_current_active_user)):
+async def get_storage_stats():
     """Get storage statistics"""
     try:
         storage_service = get_storage_service()

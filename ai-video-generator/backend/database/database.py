@@ -1,7 +1,7 @@
 import logging
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession, async_sessionmaker
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, text, select
 from contextlib import asynccontextmanager
 
 from models.database import Base
@@ -67,6 +67,24 @@ async def init_database():
     async with async_engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
     
+    # Ensure a default user exists (auth was removed, but FK constraints remain)
+    from models.database import User
+    async with async_session_factory() as session:
+        result = await session.execute(select(User).where(User.id == 1))
+        default_user = result.scalar_one_or_none()
+        if not default_user:
+            default_user = User(
+                id=1,
+                email="default@aivideo.local",
+                username="default",
+                password_hash="no-auth-mode",
+                is_active=True,
+                is_verified=True
+            )
+            session.add(default_user)
+            await session.commit()
+            logger.info("Created default user for no-auth mode")
+    
     logger.info("Database initialized successfully")
 
 
@@ -113,7 +131,7 @@ async def check_database_connection():
     """Check if database connection is working"""
     try:
         async with get_async_session() as session:
-            await session.execute("SELECT 1")
+            await session.execute(text("SELECT 1"))
         return True
     except Exception as e:
         logger.error(f"Database connection check failed: {str(e)}")

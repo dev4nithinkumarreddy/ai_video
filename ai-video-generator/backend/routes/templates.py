@@ -38,6 +38,36 @@ async def get_templates(
         raise HTTPException(status_code=500, detail="Failed to get templates")
 
 
+@router.get("/categories", response_model=List[TemplateCategory])
+async def get_template_categories():
+    """
+    Get available template categories
+    """
+    try:
+        template_service = TemplateService()
+        categories = await template_service.get_categories()
+        return categories
+    except Exception as e:
+        logger.error(f"Failed to get template categories: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to get template categories")
+
+
+@router.get("/popular", response_model=List[Template])
+async def get_popular_templates(
+    limit: int = Query(10, ge=1, le=50, description="Number of templates to return")
+):
+    """
+    Get popular templates based on usage and ratings
+    """
+    try:
+        template_service = TemplateService()
+        templates = await template_service.get_popular_templates(limit=limit)
+        return templates
+    except Exception as e:
+        logger.error(f"Failed to get popular templates: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to get popular templates")
+
+
 @router.get("/{template_id}", response_model=TemplateResponse)
 async def get_template(template_id: str):
     """
@@ -106,20 +136,6 @@ async def delete_template(template_id: str):
         raise HTTPException(status_code=500, detail="Failed to delete template")
 
 
-@router.get("/categories", response_model=List[TemplateCategory])
-async def get_template_categories():
-    """
-    Get available template categories
-    """
-    try:
-        template_service = TemplateService()
-        categories = await template_service.get_categories()
-        return categories
-    except Exception as e:
-        logger.error(f"Failed to get template categories: {str(e)}")
-        raise HTTPException(status_code=500, detail="Failed to get template categories")
-
-
 @router.get("/{template_id}/usage", response_model=TemplateUsage)
 async def get_template_usage(template_id: str):
     """
@@ -158,18 +174,3 @@ async def rate_template(template_id: str, rating: int):
         logger.error(f"Failed to rate template {template_id}: {str(e)}")
         raise HTTPException(status_code=500, detail="Failed to rate template")
 
-
-@router.get("/popular", response_model=List[Template])
-async def get_popular_templates(
-    limit: int = Query(10, ge=1, le=50, description="Number of templates to return")
-):
-    """
-    Get popular templates based on usage and ratings
-    """
-    try:
-        template_service = TemplateService()
-        templates = await template_service.get_popular_templates(limit=limit)
-        return templates
-    except Exception as e:
-        logger.error(f"Failed to get popular templates: {str(e)}")
-        raise HTTPException(status_code=500, detail="Failed to get popular templates")

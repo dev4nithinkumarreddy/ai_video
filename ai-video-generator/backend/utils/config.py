@@ -34,15 +34,15 @@ class Settings(BaseSettings):
     
     # API settings
     API_V1_STR: str = "/api"
-    SECRET_KEY: str = "your-secret-key-change-in-production"
-    ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
     
     # File upload settings
     MAX_FILE_SIZE: int = 100 * 1024 * 1024  # 100MB
     UPLOAD_DIR: str = "uploads"
     
     # AI/ML settings
-    OPENAI_API_KEY: Optional[str] = None
+    GROQ_API_KEY: Optional[str] = None
+    GROQ_BASE_URL: Optional[str] = None
+    OPENAI_API_KEY: Optional[str] = None  # Legacy, replaced by Groq
     HUGGINGFACE_API_KEY: Optional[str] = None
     ELEVENLABS_API_KEY: Optional[str] = None
     REPLICATE_API_TOKEN: Optional[str] = None
