@@ -1,0 +1,66 @@
+# Virtual Environment
+venv/
+ENV/
+env/
+.venv/
+
+# Node Modules
+node_modules/
+**/node_modules/
+
+# Python
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Logs
+logs/
+*.log
+**/logs/
+
+# Generated content
+generated/
+**/generated/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Environment
+.env
+.env.local
+.env.*
+!.env.example
+
+# Vite
+vite.config.js.timestamp-*
+*.mjs.map
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# Local development
+*.bak
+*.tmp
+*.temp
