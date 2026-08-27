@@ -36215,3 +36215,453 @@ WHERE generated_assets.id = ?
 2026-05-15 15:43:44 - utils.logging_middleware - WARNING - [API Response] POST /api/scripts/ - 422 (0.004s) - Client Error
 2026-05-15 15:44:28 - utils.logging_middleware - INFO - [API Request] GET /api/placeholder/300/200 from 127.0.0.1
 2026-05-15 15:44:28 - utils.logging_middleware - WARNING - [API Response] GET /api/placeholder/300/200 - 404 (0.023s) - Client Error
+2026-08-24 16:13:39 - __main__ - INFO - Starting server on 0.0.0.0:8000
+2026-08-24 16:13:44 - main - INFO - ================================================================================
+2026-08-24 16:13:44 - main - INFO - Starting AI Video Generator API...
+2026-08-24 16:13:44 - main - INFO - ================================================================================
+2026-08-24 16:13:44 - main - INFO - [Startup] Configuration:
+2026-08-24 16:13:44 - main - INFO -   - Host: 0.0.0.0
+2026-08-24 16:13:44 - main - INFO -   - Port: 8000
+2026-08-24 16:13:44 - main - INFO -   - Debug Mode: True
+2026-08-24 16:13:44 - main - INFO -   - Log Level: INFO
+2026-08-24 16:13:44 - main - INFO -   - Allowed Origins: 4 origins
+2026-08-24 16:13:44 - main - INFO - [Startup] Validating environment variables...
+2026-08-24 16:13:44 - utils.env_validator - INFO - [EnvValidator] Loaded environment variables from .env
+2026-08-24 16:13:44 - utils.env_validator - INFO - [EnvValidator] Starting environment variable validation...
+2026-08-24 16:13:44 - utils.env_validator - INFO - [EnvValidator] Validating 4 required variables
+2026-08-24 16:13:44 - utils.env_validator - INFO - [EnvValidator] Validating 12 optional variables
+2026-08-24 16:13:44 - utils.env_validator - ERROR - [EnvValidator] [FAIL] GROQ_API_KEY - Invalid: Required environment variable 'GROQ_API_KEY' is not set
+2026-08-24 16:13:44 - utils.env_validator - ERROR - [EnvValidator] [FAIL] GROQ_BASE_URL - Invalid: Required environment variable 'GROQ_BASE_URL' is not set
+2026-08-24 16:13:44 - utils.env_validator - INFO - [EnvValidator] [OK] ELEVENLABS_API_KEY - Valid
+2026-08-24 16:13:44 - utils.env_validator - INFO - [EnvValidator] [OK] REPLICATE_API_TOKEN - Valid
+2026-08-24 16:13:44 - utils.env_validator - INFO - [EnvValidator] [OK] OPENAI_API_KEY - Valid (optional)
+2026-08-24 16:13:44 - utils.env_validator - INFO - [EnvValidator] [OK] HUGGINGFACE_API_KEY - Valid (optional)
+2026-08-24 16:13:44 - utils.env_validator - WARNING - [EnvValidator] [WARN] DATABASE_URL - Optional environment variable 'DATABASE_URL' is not set
+2026-08-24 16:13:44 - utils.env_validator - WARNING - [EnvValidator] [WARN] REDIS_URL - Optional environment variable 'REDIS_URL' is not set
+2026-08-24 16:13:44 - utils.env_validator - WARNING - [EnvValidator] [WARN] CLOUDINARY_CLOUD_NAME - Optional environment variable 'CLOUDINARY_CLOUD_NAME' is not set
+2026-08-24 16:13:44 - utils.env_validator - WARNING - [EnvValidator] [WARN] CLOUDINARY_API_KEY - Optional environment variable 'CLOUDINARY_API_KEY' is not set
+2026-08-24 16:13:44 - utils.env_validator - WARNING - [EnvValidator] [WARN] CLOUDINARY_API_SECRET - Optional environment variable 'CLOUDINARY_API_SECRET' is not set
+2026-08-24 16:13:44 - utils.env_validator - WARNING - [EnvValidator] [WARN] AWS_ACCESS_KEY_ID - Optional environment variable 'AWS_ACCESS_KEY_ID' is not set
+2026-08-24 16:13:44 - utils.env_validator - WARNING - [EnvValidator] [WARN] AWS_SECRET_ACCESS_KEY - Optional environment variable 'AWS_SECRET_ACCESS_KEY' is not set
+2026-08-24 16:13:44 - utils.env_validator - WARNING - [EnvValidator] [WARN] AWS_REGION - Optional environment variable 'AWS_REGION' is not set
+2026-08-24 16:13:44 - utils.env_validator - WARNING - [EnvValidator] [WARN] AWS_S3_BUCKET - Optional environment variable 'AWS_S3_BUCKET' is not set
+2026-08-24 16:13:44 - utils.env_validator - WARNING - [EnvValidator] [WARN] FFMPEG_PATH - Optional environment variable 'FFMPEG_PATH' is not set
+2026-08-24 16:13:44 - utils.env_validator - ERROR - [EnvValidator] [FAIL] Environment validation failed
+2026-08-24 16:13:44 - main - ERROR - [Startup] Environment validation failed: Environment validation failed. Please check the required environment variables.
+2026-08-24 16:13:44 - watchfiles.main - INFO - 5 changes detected
+2026-08-24 16:14:00 - watchfiles.main - INFO - 1 change detected
+2026-08-24 16:14:01 - watchfiles.main - INFO - 5 changes detected
+2026-08-24 16:14:03 - main - INFO - ================================================================================
+2026-08-24 16:14:03 - main - INFO - Starting AI Video Generator API...
+2026-08-24 16:14:03 - main - INFO - ================================================================================
+2026-08-24 16:14:03 - main - INFO - [Startup] Configuration:
+2026-08-24 16:14:03 - main - INFO -   - Host: 0.0.0.0
+2026-08-24 16:14:03 - main - INFO -   - Port: 8000
+2026-08-24 16:14:03 - main - INFO -   - Debug Mode: True
+2026-08-24 16:14:03 - main - INFO -   - Log Level: INFO
+2026-08-24 16:14:03 - main - INFO -   - Allowed Origins: 4 origins
+2026-08-24 16:14:03 - main - INFO - [Startup] Validating environment variables...
+2026-08-24 16:14:03 - utils.env_validator - INFO - [EnvValidator] Loaded environment variables from .env
+2026-08-24 16:14:03 - utils.env_validator - INFO - [EnvValidator] Starting environment variable validation...
+2026-08-24 16:14:03 - utils.env_validator - INFO - [EnvValidator] Validating 2 required variables
+2026-08-24 16:14:03 - utils.env_validator - INFO - [EnvValidator] Validating 14 optional variables
+2026-08-24 16:14:03 - utils.env_validator - INFO - [EnvValidator] [OK] ELEVENLABS_API_KEY - Valid
+2026-08-24 16:14:03 - utils.env_validator - INFO - [EnvValidator] [OK] REPLICATE_API_TOKEN - Valid
+2026-08-24 16:14:03 - utils.env_validator - WARNING - [EnvValidator] [WARN] GROQ_API_KEY - Optional environment variable 'GROQ_API_KEY' is not set
+2026-08-24 16:14:03 - utils.env_validator - WARNING - [EnvValidator] [WARN] GROQ_BASE_URL - Optional environment variable 'GROQ_BASE_URL' is not set
+2026-08-24 16:14:03 - watchfiles.main - INFO - 1 change detected
+2026-08-24 16:14:03 - utils.env_validator - INFO - [EnvValidator] [OK] OPENAI_API_KEY - Valid (optional)
+2026-08-24 16:14:03 - utils.env_validator - INFO - [EnvValidator] [OK] HUGGINGFACE_API_KEY - Valid (optional)
+2026-08-24 16:14:03 - utils.env_validator - WARNING - [EnvValidator] [WARN] DATABASE_URL - Optional environment variable 'DATABASE_URL' is not set
+2026-08-24 16:14:03 - utils.env_validator - WARNING - [EnvValidator] [WARN] REDIS_URL - Optional environment variable 'REDIS_URL' is not set
+2026-08-24 16:14:03 - utils.env_validator - WARNING - [EnvValidator] [WARN] CLOUDINARY_CLOUD_NAME - Optional environment variable 'CLOUDINARY_CLOUD_NAME' is not set
+2026-08-24 16:14:03 - utils.env_validator - WARNING - [EnvValidator] [WARN] CLOUDINARY_API_KEY - Optional environment variable 'CLOUDINARY_API_KEY' is not set
+2026-08-24 16:14:03 - utils.env_validator - WARNING - [EnvValidator] [WARN] CLOUDINARY_API_SECRET - Optional environment variable 'CLOUDINARY_API_SECRET' is not set
+2026-08-24 16:14:03 - utils.env_validator - WARNING - [EnvValidator] [WARN] AWS_ACCESS_KEY_ID - Optional environment variable 'AWS_ACCESS_KEY_ID' is not set
+2026-08-24 16:14:03 - utils.env_validator - WARNING - [EnvValidator] [WARN] AWS_SECRET_ACCESS_KEY - Optional environment variable 'AWS_SECRET_ACCESS_KEY' is not set
+2026-08-24 16:14:03 - utils.env_validator - WARNING - [EnvValidator] [WARN] AWS_REGION - Optional environment variable 'AWS_REGION' is not set
+2026-08-24 16:14:03 - utils.env_validator - WARNING - [EnvValidator] [WARN] AWS_S3_BUCKET - Optional environment variable 'AWS_S3_BUCKET' is not set
+2026-08-24 16:14:03 - utils.env_validator - WARNING - [EnvValidator] [WARN] FFMPEG_PATH - Optional environment variable 'FFMPEG_PATH' is not set
+2026-08-24 16:14:03 - utils.env_validator - INFO - [EnvValidator] [OK] Environment validation passed
+2026-08-24 16:14:03 - main - INFO - [Startup] Environment validation passed (0.05s)
+2026-08-24 16:14:03 - main - INFO - [Startup] Initializing database...
+2026-08-24 16:14:03 - database.database - WARNING - DATABASE_URL not configured, using SQLite
+2026-08-24 16:14:04 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-08-24 16:14:04 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-08-24 16:14:04 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-08-24 16:14:04 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("projects")
+2026-08-24 16:14:04 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-08-24 16:14:04 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("scenes")
+2026-08-24 16:14:04 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-08-24 16:14:04 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("generated_assets")
+2026-08-24 16:14:04 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-08-24 16:14:04 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-08-24 16:14:04 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-08-24 16:14:04 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.email, users.username, users.password_hash, users.first_name, users.last_name, users.is_active, users.is_verified, users.last_login, users.created_at, users.updated_at 
+FROM users 
+WHERE users.id = ?
+2026-08-24 16:14:04 - sqlalchemy.engine.Engine - INFO - [generated in 0.00330s] (1,)
+2026-08-24 16:14:04 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-08-24 16:14:04 - database.database - INFO - Database initialized successfully
+2026-08-24 16:14:04 - main - INFO - [Startup] Database initialized successfully (0.35s)
+2026-08-24 16:14:04 - main - INFO - [Startup] Startup completed in 0.43s
+2026-08-24 16:14:04 - main - INFO - ================================================================================
+2026-08-24 16:19:07 - utils.logging_middleware - INFO - [API Request] GET /api/placeholder/300/200 from 127.0.0.1
+2026-08-24 16:19:07 - utils.logging_middleware - WARNING - [API Response] GET /api/placeholder/300/200 - 404 (0.546s) - Client Error
+2026-08-24 16:20:29 - utils.logging_middleware - INFO - [API Request] POST /api/generate-script from 127.0.0.1
+2026-08-24 16:20:29 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-08-24 16:20:29 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.email, users.username, users.password_hash, users.first_name, users.last_name, users.is_active, users.is_verified, users.last_login, users.created_at, users.updated_at 
+FROM users 
+WHERE users.id = ?
+2026-08-24 16:20:29 - sqlalchemy.engine.Engine - INFO - [cached since 385.3s ago] (1,)
+2026-08-24 16:20:29 - routes.script_generation - INFO - Generating script for topic: java
+2026-08-24 16:20:29 - routes.script_generation - ERROR - Validation error: GROQ_API_KEY is not configured in environment variables
+2026-08-24 16:20:29 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-08-24 16:20:29 - utils.logging_middleware - WARNING - [API Response] POST /api/generate-script - 400 (0.344s) - Client Error
+2026-08-24 16:20:29 - watchfiles.main - INFO - 1 change detected
+2026-08-24 16:20:38 - utils.logging_middleware - INFO - [API Request] POST /api/generate-script from 127.0.0.1
+2026-08-24 16:20:38 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-08-24 16:20:38 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.email, users.username, users.password_hash, users.first_name, users.last_name, users.is_active, users.is_verified, users.last_login, users.created_at, users.updated_at 
+FROM users 
+WHERE users.id = ?
+2026-08-24 16:20:38 - sqlalchemy.engine.Engine - INFO - [cached since 394.7s ago] (1,)
+2026-08-24 16:20:38 - routes.script_generation - INFO - Generating script for topic: java
+2026-08-24 16:20:38 - routes.script_generation - ERROR - Validation error: GROQ_API_KEY is not configured in environment variables
+2026-08-24 16:20:38 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-08-24 16:20:38 - utils.logging_middleware - WARNING - [API Response] POST /api/generate-script - 400 (0.020s) - Client Error
+2026-08-24 16:22:36 - watchfiles.main - INFO - 1 change detected
+2026-08-24 16:23:01 - watchfiles.main - INFO - 1 change detected
+2026-08-24 16:24:02 - utils.logging_middleware - INFO - [API Request] POST /api/generate-script from 127.0.0.1
+2026-08-24 16:24:02 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-08-24 16:24:02 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.email, users.username, users.password_hash, users.first_name, users.last_name, users.is_active, users.is_verified, users.last_login, users.created_at, users.updated_at 
+FROM users 
+WHERE users.id = ?
+2026-08-24 16:24:02 - sqlalchemy.engine.Engine - INFO - [cached since 598.5s ago] (1,)
+2026-08-24 16:24:02 - routes.script_generation - INFO - Generating script for topic: java
+2026-08-24 16:24:02 - routes.script_generation - ERROR - Validation error: GROQ_API_KEY is not configured in environment variables
+2026-08-24 16:24:02 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-08-24 16:24:02 - utils.logging_middleware - WARNING - [API Response] POST /api/generate-script - 400 (0.257s) - Client Error
+2026-08-24 16:25:11 - __main__ - INFO - Starting server on 0.0.0.0:8000
+2026-08-24 16:25:14 - main - INFO - ================================================================================
+2026-08-24 16:25:14 - main - INFO - Starting AI Video Generator API...
+2026-08-24 16:25:14 - main - INFO - ================================================================================
+2026-08-24 16:25:14 - main - INFO - [Startup] Configuration:
+2026-08-24 16:25:14 - main - INFO -   - Host: 0.0.0.0
+2026-08-24 16:25:14 - main - INFO -   - Port: 8000
+2026-08-24 16:25:14 - main - INFO -   - Debug Mode: True
+2026-08-24 16:25:14 - main - INFO -   - Log Level: INFO
+2026-08-24 16:25:14 - main - INFO -   - Allowed Origins: 4 origins
+2026-08-24 16:25:14 - main - INFO - [Startup] Validating environment variables...
+2026-08-24 16:25:14 - utils.env_validator - INFO - [EnvValidator] Loaded environment variables from .env
+2026-08-24 16:25:14 - utils.env_validator - INFO - [EnvValidator] Starting environment variable validation...
+2026-08-24 16:25:14 - utils.env_validator - INFO - [EnvValidator] Validating 2 required variables
+2026-08-24 16:25:14 - utils.env_validator - INFO - [EnvValidator] Validating 14 optional variables
+2026-08-24 16:25:14 - utils.env_validator - INFO - [EnvValidator] [OK] ELEVENLABS_API_KEY - Valid
+2026-08-24 16:25:14 - utils.env_validator - INFO - [EnvValidator] [OK] REPLICATE_API_TOKEN - Valid
+2026-08-24 16:25:14 - utils.env_validator - INFO - [EnvValidator] [OK] GROQ_API_KEY - Valid (optional)
+2026-08-24 16:25:14 - utils.env_validator - INFO - [EnvValidator] [OK] GROQ_BASE_URL - Valid (optional)
+2026-08-24 16:25:14 - utils.env_validator - INFO - [EnvValidator] [OK] OPENAI_API_KEY - Valid (optional)
+2026-08-24 16:25:14 - utils.env_validator - INFO - [EnvValidator] [OK] HUGGINGFACE_API_KEY - Valid (optional)
+2026-08-24 16:25:14 - utils.env_validator - WARNING - [EnvValidator] [WARN] DATABASE_URL - Optional environment variable 'DATABASE_URL' is not set
+2026-08-24 16:25:14 - utils.env_validator - WARNING - [EnvValidator] [WARN] REDIS_URL - Optional environment variable 'REDIS_URL' is not set
+2026-08-24 16:25:14 - utils.env_validator - WARNING - [EnvValidator] [WARN] CLOUDINARY_CLOUD_NAME - Optional environment variable 'CLOUDINARY_CLOUD_NAME' is not set
+2026-08-24 16:25:14 - utils.env_validator - WARNING - [EnvValidator] [WARN] CLOUDINARY_API_KEY - Optional environment variable 'CLOUDINARY_API_KEY' is not set
+2026-08-24 16:25:14 - utils.env_validator - WARNING - [EnvValidator] [WARN] CLOUDINARY_API_SECRET - Optional environment variable 'CLOUDINARY_API_SECRET' is not set
+2026-08-24 16:25:14 - utils.env_validator - WARNING - [EnvValidator] [WARN] AWS_ACCESS_KEY_ID - Optional environment variable 'AWS_ACCESS_KEY_ID' is not set
+2026-08-24 16:25:14 - utils.env_validator - WARNING - [EnvValidator] [WARN] AWS_SECRET_ACCESS_KEY - Optional environment variable 'AWS_SECRET_ACCESS_KEY' is not set
+2026-08-24 16:25:14 - utils.env_validator - WARNING - [EnvValidator] [WARN] AWS_REGION - Optional environment variable 'AWS_REGION' is not set
+2026-08-24 16:25:14 - utils.env_validator - WARNING - [EnvValidator] [WARN] AWS_S3_BUCKET - Optional environment variable 'AWS_S3_BUCKET' is not set
+2026-08-24 16:25:14 - utils.env_validator - WARNING - [EnvValidator] [WARN] FFMPEG_PATH - Optional environment variable 'FFMPEG_PATH' is not set
+2026-08-24 16:25:14 - utils.env_validator - INFO - [EnvValidator] [OK] Environment validation passed
+2026-08-24 16:25:14 - main - INFO - [Startup] Environment validation passed (0.07s)
+2026-08-24 16:25:14 - main - INFO - [Startup] Initializing database...
+2026-08-24 16:25:14 - database.database - WARNING - DATABASE_URL not configured, using SQLite
+2026-08-24 16:25:14 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-08-24 16:25:14 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-08-24 16:25:14 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-08-24 16:25:14 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("projects")
+2026-08-24 16:25:14 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-08-24 16:25:14 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("scenes")
+2026-08-24 16:25:14 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-08-24 16:25:14 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("generated_assets")
+2026-08-24 16:25:14 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-08-24 16:25:14 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-08-24 16:25:14 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-08-24 16:25:14 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.email, users.username, users.password_hash, users.first_name, users.last_name, users.is_active, users.is_verified, users.last_login, users.created_at, users.updated_at 
+FROM users 
+WHERE users.id = ?
+2026-08-24 16:25:14 - sqlalchemy.engine.Engine - INFO - [generated in 0.00350s] (1,)
+2026-08-24 16:25:14 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-08-24 16:25:14 - database.database - INFO - Database initialized successfully
+2026-08-24 16:25:14 - main - INFO - [Startup] Database initialized successfully (0.13s)
+2026-08-24 16:25:14 - main - INFO - [Startup] Startup completed in 0.22s
+2026-08-24 16:25:14 - main - INFO - ================================================================================
+2026-08-24 16:25:30 - utils.logging_middleware - INFO - [API Request] POST /api/generate-script from 127.0.0.1
+2026-08-24 16:25:30 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-08-24 16:25:30 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.email, users.username, users.password_hash, users.first_name, users.last_name, users.is_active, users.is_verified, users.last_login, users.created_at, users.updated_at 
+FROM users 
+WHERE users.id = ?
+2026-08-24 16:25:30 - sqlalchemy.engine.Engine - INFO - [cached since 15.89s ago] (1,)
+2026-08-24 16:25:30 - routes.script_generation - INFO - Generating script for topic: java
+2026-08-24 16:25:30 - services.openai_service - INFO - Generating script for topic: java, style: ScriptStyle.PROFESSIONAL, scenes: 3
+2026-08-24 16:25:34 - httpx2 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-08-24 16:25:34 - services.openai_service - ERROR - Groq authentication error: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2026-08-24 16:25:34 - routes.script_generation - ERROR - Error generating script: Invalid Groq API key. Please check your configuration.
+2026-08-24 16:25:34 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-08-24 16:25:34 - utils.logging_middleware - ERROR - [API Response] POST /api/generate-script - 500 (4.078s) - Server Error
+2026-08-24 16:26:23 - watchfiles.main - INFO - 1 change detected
+2026-08-24 16:26:24 - main - INFO - ================================================================================
+2026-08-24 16:26:24 - main - INFO - Shutting down AI Video Generator API...
+2026-08-24 16:26:24 - main - INFO - ================================================================================
+2026-08-24 16:26:24 - main - INFO - [Shutdown] Closing database connections...
+2026-08-24 16:26:25 - database.database - INFO - Database connections closed
+2026-08-24 16:26:25 - main - INFO - [Shutdown] Database connections closed
+2026-08-24 16:26:25 - main - INFO - [Shutdown] Shutdown complete
+2026-08-24 16:26:27 - watchfiles.main - INFO - 1 change detected
+2026-08-24 16:26:28 - watchfiles.main - INFO - 5 changes detected
+2026-08-24 16:28:12 - __main__ - INFO - Starting server on 0.0.0.0:8000
+2026-08-24 16:28:16 - main - INFO - ================================================================================
+2026-08-24 16:28:16 - main - INFO - Starting AI Video Generator API...
+2026-08-24 16:28:16 - main - INFO - ================================================================================
+2026-08-24 16:28:16 - main - INFO - [Startup] Configuration:
+2026-08-24 16:28:16 - main - INFO -   - Host: 0.0.0.0
+2026-08-24 16:28:16 - main - INFO -   - Port: 8000
+2026-08-24 16:28:16 - main - INFO -   - Debug Mode: True
+2026-08-24 16:28:16 - main - INFO -   - Log Level: INFO
+2026-08-24 16:28:16 - main - INFO -   - Allowed Origins: 4 origins
+2026-08-24 16:28:16 - main - INFO - [Startup] Validating environment variables...
+2026-08-24 16:28:16 - utils.env_validator - INFO - [EnvValidator] Loaded environment variables from .env
+2026-08-24 16:28:16 - utils.env_validator - INFO - [EnvValidator] Starting environment variable validation...
+2026-08-24 16:28:16 - utils.env_validator - INFO - [EnvValidator] Validating 2 required variables
+2026-08-24 16:28:16 - utils.env_validator - INFO - [EnvValidator] Validating 14 optional variables
+2026-08-24 16:28:16 - utils.env_validator - INFO - [EnvValidator] [OK] ELEVENLABS_API_KEY - Valid
+2026-08-24 16:28:16 - utils.env_validator - INFO - [EnvValidator] [OK] REPLICATE_API_TOKEN - Valid
+2026-08-24 16:28:16 - utils.env_validator - INFO - [EnvValidator] [OK] GROQ_API_KEY - Valid (optional)
+2026-08-24 16:28:16 - utils.env_validator - INFO - [EnvValidator] [OK] GROQ_BASE_URL - Valid (optional)
+2026-08-24 16:28:16 - utils.env_validator - INFO - [EnvValidator] [OK] OPENAI_API_KEY - Valid (optional)
+2026-08-24 16:28:16 - utils.env_validator - INFO - [EnvValidator] [OK] HUGGINGFACE_API_KEY - Valid (optional)
+2026-08-24 16:28:16 - utils.env_validator - WARNING - [EnvValidator] [WARN] DATABASE_URL - Optional environment variable 'DATABASE_URL' is not set
+2026-08-24 16:28:16 - utils.env_validator - WARNING - [EnvValidator] [WARN] REDIS_URL - Optional environment variable 'REDIS_URL' is not set
+2026-08-24 16:28:16 - utils.env_validator - WARNING - [EnvValidator] [WARN] CLOUDINARY_CLOUD_NAME - Optional environment variable 'CLOUDINARY_CLOUD_NAME' is not set
+2026-08-24 16:28:16 - utils.env_validator - WARNING - [EnvValidator] [WARN] CLOUDINARY_API_KEY - Optional environment variable 'CLOUDINARY_API_KEY' is not set
+2026-08-24 16:28:16 - utils.env_validator - WARNING - [EnvValidator] [WARN] CLOUDINARY_API_SECRET - Optional environment variable 'CLOUDINARY_API_SECRET' is not set
+2026-08-24 16:28:16 - utils.env_validator - WARNING - [EnvValidator] [WARN] AWS_ACCESS_KEY_ID - Optional environment variable 'AWS_ACCESS_KEY_ID' is not set
+2026-08-24 16:28:16 - utils.env_validator - WARNING - [EnvValidator] [WARN] AWS_SECRET_ACCESS_KEY - Optional environment variable 'AWS_SECRET_ACCESS_KEY' is not set
+2026-08-24 16:28:16 - utils.env_validator - WARNING - [EnvValidator] [WARN] AWS_REGION - Optional environment variable 'AWS_REGION' is not set
+2026-08-24 16:28:16 - utils.env_validator - WARNING - [EnvValidator] [WARN] AWS_S3_BUCKET - Optional environment variable 'AWS_S3_BUCKET' is not set
+2026-08-24 16:28:16 - utils.env_validator - WARNING - [EnvValidator] [WARN] FFMPEG_PATH - Optional environment variable 'FFMPEG_PATH' is not set
+2026-08-24 16:28:16 - utils.env_validator - INFO - [EnvValidator] [OK] Environment validation passed
+2026-08-24 16:28:16 - main - INFO - [Startup] Environment validation passed (0.05s)
+2026-08-24 16:28:16 - main - INFO - [Startup] Initializing database...
+2026-08-24 16:28:16 - database.database - WARNING - DATABASE_URL not configured, using SQLite
+2026-08-24 16:28:16 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-08-24 16:28:16 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-08-24 16:28:16 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-08-24 16:28:16 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("projects")
+2026-08-24 16:28:16 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-08-24 16:28:16 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("scenes")
+2026-08-24 16:28:16 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-08-24 16:28:16 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("generated_assets")
+2026-08-24 16:28:16 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-08-24 16:28:16 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-08-24 16:28:16 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-08-24 16:28:16 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.email, users.username, users.password_hash, users.first_name, users.last_name, users.is_active, users.is_verified, users.last_login, users.created_at, users.updated_at 
+FROM users 
+WHERE users.id = ?
+2026-08-24 16:28:16 - sqlalchemy.engine.Engine - INFO - [generated in 0.00279s] (1,)
+2026-08-24 16:28:16 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-08-24 16:28:16 - database.database - INFO - Database initialized successfully
+2026-08-24 16:28:16 - main - INFO - [Startup] Database initialized successfully (0.12s)
+2026-08-24 16:28:16 - main - INFO - [Startup] Startup completed in 0.20s
+2026-08-24 16:28:16 - main - INFO - ================================================================================
+2026-08-27 14:15:34 - __main__ - INFO - Starting server on 0.0.0.0:8000
+2026-08-27 14:15:38 - main - INFO - ================================================================================
+2026-08-27 14:15:38 - main - INFO - Starting AI Video Generator API...
+2026-08-27 14:15:38 - main - INFO - ================================================================================
+2026-08-27 14:15:38 - main - INFO - [Startup] Configuration:
+2026-08-27 14:15:38 - main - INFO -   - Host: 0.0.0.0
+2026-08-27 14:15:38 - main - INFO -   - Port: 8000
+2026-08-27 14:15:38 - main - INFO -   - Debug Mode: True
+2026-08-27 14:15:38 - main - INFO -   - Log Level: INFO
+2026-08-27 14:15:38 - main - INFO -   - Allowed Origins: 4 origins
+2026-08-27 14:15:38 - main - INFO - [Startup] Validating environment variables...
+2026-08-27 14:15:38 - utils.env_validator - INFO - [EnvValidator] Loaded environment variables from .env
+2026-08-27 14:15:38 - utils.env_validator - INFO - [EnvValidator] Starting environment variable validation...
+2026-08-27 14:15:38 - utils.env_validator - INFO - [EnvValidator] Validating 2 required variables
+2026-08-27 14:15:38 - utils.env_validator - INFO - [EnvValidator] Validating 14 optional variables
+2026-08-27 14:15:38 - utils.env_validator - INFO - [EnvValidator] [OK] ELEVENLABS_API_KEY - Valid
+2026-08-27 14:15:38 - utils.env_validator - INFO - [EnvValidator] [OK] REPLICATE_API_TOKEN - Valid
+2026-08-27 14:15:38 - utils.env_validator - INFO - [EnvValidator] [OK] GROQ_API_KEY - Valid (optional)
+2026-08-27 14:15:38 - utils.env_validator - INFO - [EnvValidator] [OK] GROQ_BASE_URL - Valid (optional)
+2026-08-27 14:15:38 - utils.env_validator - INFO - [EnvValidator] [OK] OPENAI_API_KEY - Valid (optional)
+2026-08-27 14:15:38 - utils.env_validator - INFO - [EnvValidator] [OK] HUGGINGFACE_API_KEY - Valid (optional)
+2026-08-27 14:15:38 - utils.env_validator - WARNING - [EnvValidator] [WARN] DATABASE_URL - Optional environment variable 'DATABASE_URL' is not set
+2026-08-27 14:15:38 - utils.env_validator - WARNING - [EnvValidator] [WARN] REDIS_URL - Optional environment variable 'REDIS_URL' is not set
+2026-08-27 14:15:38 - utils.env_validator - WARNING - [EnvValidator] [WARN] CLOUDINARY_CLOUD_NAME - Optional environment variable 'CLOUDINARY_CLOUD_NAME' is not set
+2026-08-27 14:15:38 - utils.env_validator - WARNING - [EnvValidator] [WARN] CLOUDINARY_API_KEY - Optional environment variable 'CLOUDINARY_API_KEY' is not set
+2026-08-27 14:15:38 - utils.env_validator - WARNING - [EnvValidator] [WARN] CLOUDINARY_API_SECRET - Optional environment variable 'CLOUDINARY_API_SECRET' is not set
+2026-08-27 14:15:38 - utils.env_validator - WARNING - [EnvValidator] [WARN] AWS_ACCESS_KEY_ID - Optional environment variable 'AWS_ACCESS_KEY_ID' is not set
+2026-08-27 14:15:38 - utils.env_validator - WARNING - [EnvValidator] [WARN] AWS_SECRET_ACCESS_KEY - Optional environment variable 'AWS_SECRET_ACCESS_KEY' is not set
+2026-08-27 14:15:38 - utils.env_validator - WARNING - [EnvValidator] [WARN] AWS_REGION - Optional environment variable 'AWS_REGION' is not set
+2026-08-27 14:15:38 - utils.env_validator - WARNING - [EnvValidator] [WARN] AWS_S3_BUCKET - Optional environment variable 'AWS_S3_BUCKET' is not set
+2026-08-27 14:15:38 - utils.env_validator - WARNING - [EnvValidator] [WARN] FFMPEG_PATH - Optional environment variable 'FFMPEG_PATH' is not set
+2026-08-27 14:15:38 - utils.env_validator - INFO - [EnvValidator] [OK] Environment validation passed
+2026-08-27 14:15:38 - main - INFO - [Startup] Environment validation passed (0.05s)
+2026-08-27 14:15:38 - main - INFO - [Startup] Initializing database...
+2026-08-27 14:15:38 - database.database - WARNING - DATABASE_URL not configured, using SQLite
+2026-08-27 14:15:38 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-08-27 14:15:38 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-08-27 14:15:38 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-08-27 14:15:38 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("projects")
+2026-08-27 14:15:38 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-08-27 14:15:38 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("scenes")
+2026-08-27 14:15:38 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-08-27 14:15:39 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("generated_assets")
+2026-08-27 14:15:39 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-08-27 14:15:39 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-08-27 14:15:39 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-08-27 14:15:39 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.email, users.username, users.password_hash, users.first_name, users.last_name, users.is_active, users.is_verified, users.last_login, users.created_at, users.updated_at 
+FROM users 
+WHERE users.id = ?
+2026-08-27 14:15:39 - sqlalchemy.engine.Engine - INFO - [generated in 0.00299s] (1,)
+2026-08-27 14:15:39 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-08-27 14:15:39 - database.database - INFO - Database initialized successfully
+2026-08-27 14:15:39 - main - INFO - [Startup] Database initialized successfully (0.26s)
+2026-08-27 14:15:39 - main - INFO - [Startup] Startup completed in 0.35s
+2026-08-27 14:15:39 - main - INFO - ================================================================================
+2026-08-27 14:16:22 - utils.logging_middleware - INFO - [API Request] GET /api/health from 127.0.0.1
+2026-08-27 14:16:23 - utils.logging_middleware - INFO - [API Response] GET /api/health - 200 (1.018s) - Success
+2026-08-27 14:19:56 - watchfiles.main - INFO - 1 change detected
+2026-08-27 14:19:59 - main - INFO - ================================================================================
+2026-08-27 14:19:59 - main - INFO - Shutting down AI Video Generator API...
+2026-08-27 14:19:59 - main - INFO - ================================================================================
+2026-08-27 14:19:59 - main - INFO - [Shutdown] Closing database connections...
+2026-08-27 14:19:59 - database.database - INFO - Database connections closed
+2026-08-27 14:19:59 - main - INFO - [Shutdown] Database connections closed
+2026-08-27 14:19:59 - main - INFO - [Shutdown] Shutdown complete
+2026-08-27 14:20:00 - watchfiles.main - INFO - 1 change detected
+2026-08-27 14:20:02 - watchfiles.main - INFO - 1 change detected
+2026-08-27 14:21:21 - __main__ - INFO - Starting server on 0.0.0.0:8000
+2026-08-27 14:21:24 - main - INFO - ================================================================================
+2026-08-27 14:21:24 - main - INFO - Starting AI Video Generator API...
+2026-08-27 14:21:24 - main - INFO - ================================================================================
+2026-08-27 14:21:24 - main - INFO - [Startup] Configuration:
+2026-08-27 14:21:24 - main - INFO -   - Host: 0.0.0.0
+2026-08-27 14:21:24 - main - INFO -   - Port: 8000
+2026-08-27 14:21:24 - main - INFO -   - Debug Mode: True
+2026-08-27 14:21:24 - main - INFO -   - Log Level: INFO
+2026-08-27 14:21:24 - main - INFO -   - Allowed Origins: 4 origins
+2026-08-27 14:21:24 - main - INFO - [Startup] Validating environment variables...
+2026-08-27 14:21:24 - utils.env_validator - INFO - [EnvValidator] Loaded environment variables from .env
+2026-08-27 14:21:24 - utils.env_validator - INFO - [EnvValidator] Starting environment variable validation...
+2026-08-27 14:21:24 - utils.env_validator - INFO - [EnvValidator] Validating 2 required variables
+2026-08-27 14:21:24 - utils.env_validator - INFO - [EnvValidator] Validating 14 optional variables
+2026-08-27 14:21:24 - utils.env_validator - INFO - [EnvValidator] [OK] ELEVENLABS_API_KEY - Valid
+2026-08-27 14:21:24 - utils.env_validator - INFO - [EnvValidator] [OK] REPLICATE_API_TOKEN - Valid
+2026-08-27 14:21:24 - utils.env_validator - INFO - [EnvValidator] [OK] GROQ_API_KEY - Valid (optional)
+2026-08-27 14:21:24 - utils.env_validator - INFO - [EnvValidator] [OK] GROQ_BASE_URL - Valid (optional)
+2026-08-27 14:21:24 - utils.env_validator - INFO - [EnvValidator] [OK] OPENAI_API_KEY - Valid (optional)
+2026-08-27 14:21:24 - utils.env_validator - INFO - [EnvValidator] [OK] HUGGINGFACE_API_KEY - Valid (optional)
+2026-08-27 14:21:24 - utils.env_validator - WARNING - [EnvValidator] [WARN] DATABASE_URL - Optional environment variable 'DATABASE_URL' is not set
+2026-08-27 14:21:24 - utils.env_validator - WARNING - [EnvValidator] [WARN] REDIS_URL - Optional environment variable 'REDIS_URL' is not set
+2026-08-27 14:21:24 - utils.env_validator - WARNING - [EnvValidator] [WARN] CLOUDINARY_CLOUD_NAME - Optional environment variable 'CLOUDINARY_CLOUD_NAME' is not set
+2026-08-27 14:21:24 - utils.env_validator - WARNING - [EnvValidator] [WARN] CLOUDINARY_API_KEY - Optional environment variable 'CLOUDINARY_API_KEY' is not set
+2026-08-27 14:21:24 - utils.env_validator - WARNING - [EnvValidator] [WARN] CLOUDINARY_API_SECRET - Optional environment variable 'CLOUDINARY_API_SECRET' is not set
+2026-08-27 14:21:24 - utils.env_validator - WARNING - [EnvValidator] [WARN] AWS_ACCESS_KEY_ID - Optional environment variable 'AWS_ACCESS_KEY_ID' is not set
+2026-08-27 14:21:24 - utils.env_validator - WARNING - [EnvValidator] [WARN] AWS_SECRET_ACCESS_KEY - Optional environment variable 'AWS_SECRET_ACCESS_KEY' is not set
+2026-08-27 14:21:24 - utils.env_validator - WARNING - [EnvValidator] [WARN] AWS_REGION - Optional environment variable 'AWS_REGION' is not set
+2026-08-27 14:21:24 - utils.env_validator - WARNING - [EnvValidator] [WARN] AWS_S3_BUCKET - Optional environment variable 'AWS_S3_BUCKET' is not set
+2026-08-27 14:21:24 - utils.env_validator - WARNING - [EnvValidator] [WARN] FFMPEG_PATH - Optional environment variable 'FFMPEG_PATH' is not set
+2026-08-27 14:21:24 - utils.env_validator - INFO - [EnvValidator] [OK] Environment validation passed
+2026-08-27 14:21:24 - main - INFO - [Startup] Environment validation passed (0.04s)
+2026-08-27 14:21:24 - main - INFO - [Startup] Initializing database...
+2026-08-27 14:21:24 - database.database - WARNING - DATABASE_URL not configured, using SQLite
+2026-08-27 14:21:24 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-08-27 14:21:24 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-08-27 14:21:24 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-08-27 14:21:24 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("projects")
+2026-08-27 14:21:24 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-08-27 14:21:24 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("scenes")
+2026-08-27 14:21:24 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-08-27 14:21:24 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("generated_assets")
+2026-08-27 14:21:24 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-08-27 14:21:24 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-08-27 14:21:24 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-08-27 14:21:24 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.email, users.username, users.password_hash, users.first_name, users.last_name, users.is_active, users.is_verified, users.last_login, users.created_at, users.updated_at 
+FROM users 
+WHERE users.id = ?
+2026-08-27 14:21:24 - sqlalchemy.engine.Engine - INFO - [generated in 0.00300s] (1,)
+2026-08-27 14:21:24 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-08-27 14:21:24 - database.database - INFO - Database initialized successfully
+2026-08-27 14:21:24 - main - INFO - [Startup] Database initialized successfully (0.12s)
+2026-08-27 14:21:24 - main - INFO - [Startup] Startup completed in 0.18s
+2026-08-27 14:21:24 - main - INFO - ================================================================================
+2026-08-27 14:21:30 - watchfiles.main - INFO - 6 changes detected
+2026-08-27 14:21:30 - watchfiles.main - INFO - 1 change detected
+2026-08-27 14:22:55 - watchfiles.main - INFO - 1 change detected
+2026-08-27 14:23:09 - watchfiles.main - INFO - 1 change detected
+2026-08-27 14:23:58 - watchfiles.main - INFO - 1 change detected
+2026-08-27 14:24:00 - main - INFO - ================================================================================
+2026-08-27 14:24:00 - main - INFO - Shutting down AI Video Generator API...
+2026-08-27 14:24:00 - main - INFO - ================================================================================
+2026-08-27 14:24:00 - main - INFO - [Shutdown] Closing database connections...
+2026-08-27 14:24:00 - database.database - INFO - Database connections closed
+2026-08-27 14:24:00 - main - INFO - [Shutdown] Database connections closed
+2026-08-27 14:24:00 - main - INFO - [Shutdown] Shutdown complete
+2026-08-27 14:24:01 - watchfiles.main - INFO - 1 change detected
+2026-08-27 14:24:02 - watchfiles.main - INFO - 5 changes detected
+2026-08-27 14:24:03 - main - INFO - ================================================================================
+2026-08-27 14:24:03 - main - INFO - Starting AI Video Generator API...
+2026-08-27 14:24:03 - main - INFO - ================================================================================
+2026-08-27 14:24:03 - main - INFO - [Startup] Configuration:
+2026-08-27 14:24:03 - main - INFO -   - Host: 0.0.0.0
+2026-08-27 14:24:03 - main - INFO -   - Port: 8000
+2026-08-27 14:24:03 - main - INFO -   - Debug Mode: True
+2026-08-27 14:24:03 - main - INFO -   - Log Level: INFO
+2026-08-27 14:24:03 - main - INFO -   - Allowed Origins: 4 origins
+2026-08-27 14:24:03 - main - INFO - [Startup] Validating environment variables...
+2026-08-27 14:24:03 - utils.env_validator - INFO - [EnvValidator] Loaded environment variables from .env
+2026-08-27 14:24:03 - utils.env_validator - INFO - [EnvValidator] Starting environment variable validation...
+2026-08-27 14:24:03 - utils.env_validator - INFO - [EnvValidator] Validating 2 required variables
+2026-08-27 14:24:03 - utils.env_validator - INFO - [EnvValidator] Validating 14 optional variables
+2026-08-27 14:24:03 - watchfiles.main - INFO - 1 change detected
+2026-08-27 14:24:03 - utils.env_validator - INFO - [EnvValidator] [OK] ELEVENLABS_API_KEY - Valid
+2026-08-27 14:24:03 - utils.env_validator - INFO - [EnvValidator] [OK] REPLICATE_API_TOKEN - Valid
+2026-08-27 14:24:03 - utils.env_validator - INFO - [EnvValidator] [OK] GROQ_API_KEY - Valid (optional)
+2026-08-27 14:24:03 - utils.env_validator - INFO - [EnvValidator] [OK] GROQ_BASE_URL - Valid (optional)
+2026-08-27 14:24:03 - utils.env_validator - INFO - [EnvValidator] [OK] OPENAI_API_KEY - Valid (optional)
+2026-08-27 14:24:03 - utils.env_validator - INFO - [EnvValidator] [OK] HUGGINGFACE_API_KEY - Valid (optional)
+2026-08-27 14:24:03 - utils.env_validator - WARNING - [EnvValidator] [WARN] DATABASE_URL - Optional environment variable 'DATABASE_URL' is not set
+2026-08-27 14:24:03 - utils.env_validator - WARNING - [EnvValidator] [WARN] REDIS_URL - Optional environment variable 'REDIS_URL' is not set
+2026-08-27 14:24:03 - utils.env_validator - WARNING - [EnvValidator] [WARN] CLOUDINARY_CLOUD_NAME - Optional environment variable 'CLOUDINARY_CLOUD_NAME' is not set
+2026-08-27 14:24:03 - utils.env_validator - WARNING - [EnvValidator] [WARN] CLOUDINARY_API_KEY - Optional environment variable 'CLOUDINARY_API_KEY' is not set
+2026-08-27 14:24:03 - utils.env_validator - WARNING - [EnvValidator] [WARN] CLOUDINARY_API_SECRET - Optional environment variable 'CLOUDINARY_API_SECRET' is not set
+2026-08-27 14:24:03 - utils.env_validator - WARNING - [EnvValidator] [WARN] AWS_ACCESS_KEY_ID - Optional environment variable 'AWS_ACCESS_KEY_ID' is not set
+2026-08-27 14:24:03 - utils.env_validator - WARNING - [EnvValidator] [WARN] AWS_SECRET_ACCESS_KEY - Optional environment variable 'AWS_SECRET_ACCESS_KEY' is not set
+2026-08-27 14:24:03 - utils.env_validator - WARNING - [EnvValidator] [WARN] AWS_REGION - Optional environment variable 'AWS_REGION' is not set
+2026-08-27 14:24:03 - utils.env_validator - WARNING - [EnvValidator] [WARN] AWS_S3_BUCKET - Optional environment variable 'AWS_S3_BUCKET' is not set
+2026-08-27 14:24:03 - utils.env_validator - WARNING - [EnvValidator] [WARN] FFMPEG_PATH - Optional environment variable 'FFMPEG_PATH' is not set
+2026-08-27 14:24:03 - utils.env_validator - INFO - [EnvValidator] [OK] Environment validation passed
+2026-08-27 14:24:03 - main - INFO - [Startup] Environment validation passed (0.04s)
+2026-08-27 14:24:03 - main - INFO - [Startup] Initializing database...
+2026-08-27 14:24:03 - database.database - WARNING - DATABASE_URL not configured, using SQLite
+2026-08-27 14:24:03 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-08-27 14:24:03 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-08-27 14:24:03 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-08-27 14:24:03 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("projects")
+2026-08-27 14:24:03 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-08-27 14:24:03 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("scenes")
+2026-08-27 14:24:03 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-08-27 14:24:03 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("generated_assets")
+2026-08-27 14:24:03 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-08-27 14:24:03 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-08-27 14:24:03 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-08-27 14:24:03 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.email, users.username, users.password_hash, users.first_name, users.last_name, users.is_active, users.is_verified, users.last_login, users.created_at, users.updated_at 
+FROM users 
+WHERE users.id = ?
+2026-08-27 14:24:03 - sqlalchemy.engine.Engine - INFO - [generated in 0.00216s] (1,)
+2026-08-27 14:24:03 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-08-27 14:24:03 - database.database - INFO - Database initialized successfully
+2026-08-27 14:24:03 - main - INFO - [Startup] Database initialized successfully (0.16s)
+2026-08-27 14:24:03 - main - INFO - [Startup] Startup completed in 0.24s
+2026-08-27 14:24:03 - main - INFO - ================================================================================

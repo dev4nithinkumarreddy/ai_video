@@ -34,6 +34,8 @@ class Settings(BaseSettings):
     
     # API settings
     API_V1_STR: str = "/api"
+    SECRET_KEY: Optional[str] = None
+    ACCESS_TOKEN_EXPIRE_MINUTES: Optional[int] = 30
     
     # File upload settings
     MAX_FILE_SIZE: int = 100 * 1024 * 1024  # 100MB
@@ -46,6 +48,8 @@ class Settings(BaseSettings):
     HUGGINGFACE_API_KEY: Optional[str] = None
     ELEVENLABS_API_KEY: Optional[str] = None
     REPLICATE_API_TOKEN: Optional[str] = None
+    INFERENCE_MODE: str = "hosted"  # 'hosted' or 'local'
+    IMAGE_PROVIDER: str = "pollinations" # 'hosted', 'local', 'pollinations'
     
     # Logging settings
     LOG_LEVEL: str = "INFO"
