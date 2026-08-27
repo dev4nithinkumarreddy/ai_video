@@ -47,14 +47,14 @@ class EnvironmentValidator:
     
     # Required environment variables
     REQUIRED_VARS = [
-        'GROQ_API_KEY',
-        'GROQ_BASE_URL',
         'ELEVENLABS_API_KEY',
         'REPLICATE_API_TOKEN',
     ]
     
     # Optional environment variables
     OPTIONAL_VARS = [
+        'GROQ_API_KEY',
+        'GROQ_BASE_URL',
         'OPENAI_API_KEY',
         'HUGGINGFACE_API_KEY',
         'DATABASE_URL',
